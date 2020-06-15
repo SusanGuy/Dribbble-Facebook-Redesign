@@ -1,0 +1,579 @@
+$facebook-light: #4267b2;
+$facebook-bright: #3b5998;
+$text-font: 15px;
+$plain-white: #fff;
+$grey: #928e8ef6;
+$black: #000;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #eee;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  a {
+    text-decoration: none;
+  }
+  li {
+    list-style: none;
+  }
+  font-size: $text-font;
+  font-family: "Lato", sans-serif;
+}
+
+hr {
+  color: rgb(245, 239, 239);
+  opacity: 0.3;
+}
+
+.ellipsis,
+.time {
+  position: absolute;
+  color: rgb(139, 139, 139);
+}
+
+.ellipsis {
+  top: 0;
+  right: 15px;
+}
+
+.time {
+  top: 6px;
+  font-size: 10px;
+  right: 40px;
+}
+
+.card {
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.header {
+  height: 5vh;
+  background: linear-gradient(to right, $facebook-bright, $facebook-light);
+  display: flex;
+  align-items: center;
+  padding: 0 3.25rem;
+
+  &-left {
+    display: flex;
+    justify-content: space-evenly;
+
+    color: $plain-white;
+    align-items: center;
+
+    li {
+      i {
+        font-size: 2rem;
+      }
+
+      cursor: pointer;
+      padding: 1rem;
+    }
+  }
+
+  .main-search {
+    margin: 0 auto;
+    position: relative;
+
+    span {
+      color: $grey;
+      position: absolute;
+      right: 20px;
+      top: 7px;
+    }
+
+    .search-bar {
+      width: 500px;
+      height: 35px;
+      border-radius: 20px;
+      border: none;
+      color: $grey;
+      text-indent: 12px;
+    }
+  }
+
+  &-right {
+    display: flex;
+    justify-content: space-around;
+    color: $plain-white;
+    align-items: center;
+
+    li {
+      padding: 15px;
+
+      i {
+        font-size: 18px;
+        color: $black;
+      }
+    }
+    .avatar-image {
+      padding: 5px;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.container {
+  padding: 2%;
+  display: flex;
+
+  .info-card {
+    display: flex;
+    flex-direction: column;
+    width: 18%;
+
+    .profile-card,
+    .news-card,
+    .user-gallery {
+      margin-bottom: 25px;
+    }
+
+    .profile-card {
+      display: flex;
+      flex-direction: column;
+
+      background: $facebook-light;
+      padding: 20px;
+      position: relative;
+
+      .profile-info {
+        display: flex;
+        margin: 10px 0;
+
+        img {
+          width: 45px;
+          border-radius: 50%;
+        }
+
+        .user-info {
+          display: flex;
+          flex-direction: column;
+          margin: 3px 20px;
+
+          span {
+            margin-bottom: 5px;
+            color: $plain-white;
+          }
+
+          .name {
+            font-size: 14px;
+          }
+          .address {
+            font-size: 12px;
+          }
+        }
+      }
+
+      .friends-info {
+        display: flex;
+        color: $plain-white;
+        margin: 10px;
+        justify-content: space-between;
+        span {
+          font-size: 12px;
+        }
+      }
+
+      .feed {
+        margin: 20px 0;
+        display: flex;
+
+        .icons-box {
+          border-radius: 40px;
+          background-color: rgba(9, 14, 48, 0.552);
+          display: flex;
+
+          .main-icons {
+            margin: 30px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .icon {
+              padding: 10px;
+              color: $grey;
+            }
+          }
+        }
+
+        .focused {
+          color: $plain-white;
+        }
+
+        .other-icons {
+          display: flex;
+          flex-direction: column;
+          margin-left: 20px;
+          align-items: flex-start;
+
+          .feed-item {
+            margin-top: 5px;
+            color: #709ef3;
+          }
+
+          span {
+            font-size: 12px;
+          }
+
+          .icons-list {
+            margin-top: 10px;
+
+            li {
+              margin-bottom: 8px;
+              color: rgb(192, 188, 188);
+            }
+          }
+        }
+      }
+    }
+
+    .news-card {
+      background-color: #fff;
+      position: relative;
+
+      .ellipsis {
+        font-size: 15px;
+        color: $grey;
+      }
+
+      h5 {
+        padding: 18px;
+      }
+
+      .news-item {
+        display: flex;
+        padding: 15px 10px;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+          margin-left: 10px;
+          color: $grey;
+          font-size: 11px;
+          i {
+            font-size: 14px;
+          }
+          .details {
+            color: rgba(90, 90, 185, 0.788);
+          }
+        }
+      }
+    }
+
+    .user-gallery {
+      background-color: #fff;
+      position: relative;
+
+      .gallery-header {
+        padding: 18px;
+
+        span:first-of-type {
+          font-size: 14px;
+        }
+
+        span:nth-child(2) {
+          font-size: 12px;
+          color: $grey;
+        }
+      }
+
+      .image-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .news-feed-card {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2%;
+    max-width: 30%;
+
+    .new-status {
+      background-color: $plain-white;
+      margin-bottom: 25px;
+
+      .status-headers {
+        display: flex;
+        padding: 10px 20px;
+        .status-option {
+          margin-right: 20px;
+          font-size: 11px;
+          color: $grey;
+        }
+
+        .focused {
+          color: #000;
+        }
+      }
+
+      .search-bar {
+        margin: 5px 20px 20px 20px;
+        position: relative;
+
+        input {
+          margin: 0 auto;
+          border: none;
+          background-color: #eee;
+          width: 100%;
+          height: 40px;
+          border-radius: 40px;
+          text-indent: 10px;
+        }
+
+        .icons {
+          position: absolute;
+          top: 10px;
+          right: 20px;
+
+          span {
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+
+    .post {
+      background-color: $plain-white;
+      margin-bottom: 25px;
+
+      .post-header {
+        padding: 15px;
+        position: relative;
+
+        .info-row {
+          display: flex;
+
+          img {
+            width: 40px;
+            border-radius: 50%;
+          }
+
+          .more-info {
+            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+
+            .name {
+              font-size: 14px;
+            }
+
+            .relation {
+              margin-top: 5px;
+              font-size: 12px;
+              color: #709ef3;
+            }
+          }
+        }
+      }
+
+      .image-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1px;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .post-content {
+        display: flex;
+        padding: 20px 15px;
+        flex-direction: column;
+
+        .description {
+          font-size: 13px;
+          color: $grey;
+          margin-bottom: 20px;
+        }
+
+        .post-options {
+          padding: 10px;
+          display: flex;
+          justify-content: space-between;
+
+          .emojis {
+            color: $grey;
+            span {
+              font-size: 13px;
+              margin-left: 10px;
+            }
+          }
+
+          .details {
+            color: $grey;
+            span {
+              font-size: 13px;
+              margin-left: 10px;
+            }
+          }
+        }
+
+        .comments {
+          margin-top: 20px;
+
+          .comment {
+            margin-bottom: 20px;
+
+            img {
+              width: 7%;
+              border-radius: 50%;
+            }
+
+            .comment-info {
+              margin-left: 20px;
+              display: inline-block;
+              flex-direction: column;
+              vertical-align: top;
+
+              span {
+                display: block;
+                margin-bottom: 4px;
+              }
+
+              .comment-description {
+                color: $grey;
+                font-size: 13px;
+              }
+              .comment-options {
+                display: flex;
+                justify-content: flex-start;
+
+                span {
+                  font-size: 12px;
+                  color: #709ef3;
+                  margin-right: 10px;
+                }
+              }
+            }
+          }
+        }
+
+        .not-focused {
+          margin-top: 20px;
+        }
+        .search-bar {
+          position: relative;
+
+          .focused {
+            background-color: $plain-white;
+            border: 0.5px dotted rgb(199, 196, 196);
+          }
+
+          input {
+            margin: 0 auto;
+            border: none;
+            background-color: #eee;
+            width: 100%;
+            height: 40px;
+            border-radius: 40px;
+            text-indent: 10px;
+          }
+
+          .icons {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+
+            span {
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .chat-bar {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2%;
+    width: 15%;
+    height: 15%;
+    background-color: $plain-white;
+
+    .mero-ellipsis {
+      display: block;
+      position: relative;
+      padding: 3% 8%;
+      text-align: right;
+      color: $grey;
+    }
+
+    .search-options {
+      display: flex;
+      padding: 3% 8%;
+      justify-content: space-between;
+
+      span {
+        color: $grey;
+      }
+    }
+
+    .chat-body {
+      padding: 3% 8%;
+
+      .chat-header {
+        display: flex;
+        justify-content: space-between;
+
+        .title {
+          color: #709ef3;
+        }
+        .add {
+          color: $grey;
+        }
+      }
+
+      .chat-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .chat {
+          display: flex;
+          margin-top: 10px;
+          position: relative;
+
+          span {
+            align-self: center;
+            font-size: 15px;
+            color: rgb(2, 2, 2);
+          }
+
+          .dot {
+            position: absolute;
+            left: 20%;
+            bottom: 10%;
+            width: 10px;
+            height: 10px;
+            background-color: rgb(37, 179, 37);
+            border-radius: 50%;
+            display: inline-block;
+          }
+
+          img {
+            width: 25%;
+            margin-right: 20px;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}
